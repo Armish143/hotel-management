@@ -1,0 +1,295 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f6f2;
+}
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1b1b1b, #2b2b2b);
+  color: #fff;
+  padding: 25px 20px;
+}
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+  color: #c9a13a;
+  margin-bottom: 40px;
+}
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+.sidebar-menu li {
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar-menu li:hover,
+.sidebar-menu li.active {
+  background: rgba(201, 161, 58, 0.15);
+  color: #c9a13a;
+}
+.main-content {
+  flex: 1;
+  background: #faf9f6;
+}
+.dashboard-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.dashboard-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  border: 1px solid #d6dce1;
+  border-radius: 4px;
+  padding: 8px 11px;
+  background: #fff;
+  color: #2f3944;
+  cursor: pointer;
+  font-size: 12px;
+}
+.dashboard-refresh-button svg {
+  color: #1674c4;
+}
+.dashboard-refresh-button:hover {
+  border-color: #1674c4;
+}
+.dashboard-calendar-card {
+  position: relative;
+  min-height: 0;
+  height: calc(100% - 0px);
+  padding: 25px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
+}
+.dashboard-calendar-card:hover {
+  transform: translateY(-6px);
+}
+.dashboard-calendar-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 58px;
+  border: 0;
+  background: transparent;
+  color: #1b1b1b;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+}
+.dashboard-calendar-button svg {
+  color: #b68c34;
+  font-size: 1.8rem;
+}
+.dashboard-calendar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100dvh;
+  padding: 16px;
+  box-sizing: border-box;
+  background: rgba(20, 27, 34, 0.015);
+  overflow: auto;
+}
+.dashboard-calendar-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  width: min(480px, calc(100vw - 32px));
+  min-height: 420px;
+  max-height: calc(100dvh - 40px);
+  padding: 28px;
+  box-sizing: border-box;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  isolation: isolate;
+}
+.dashboard-calendar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 42px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #edf0f2;
+}
+.dashboard-calendar-heading h3 {
+  margin: 0;
+  color: #27313d;
+  font-size: 19px;
+  font-weight: 700;
+}
+.dashboard-calendar-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #6d7884;
+  cursor: pointer;
+}
+.dashboard-calendar-close:hover { background: #f1f3f5; color: #27313d; }
+.dashboard-calendar-panel > label.dashboard-calendar-field {
+  position: static !important;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  min-height: 72px;
+  width: 100%;
+  margin-bottom: 0;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dashboard-calendar-panel > label.dashboard-calendar-field span {
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.dashboard-calendar-panel > label.dashboard-calendar-field input[type="date"] {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  margin: 0;
+  box-sizing: border-box;
+  position: static;
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 6px 8px;
+  border: 1px solid #d6dce1;
+  border-radius: 4px;
+  color: #27313d;
+  font-size: 14px;
+}
+.dashboard-calendar-reset {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid #d6dce1;
+  border-radius: 4px;
+  background: #f7f8f9;
+  color: #27313d;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dashboard-calendar-reset:hover { border-color: #1674c4; background: #fff; }
+.dashboard-calendar-search {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 46px;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 9px 10px;
+  border: 1px solid #1674c4;
+  border-radius: 4px;
+  background: #1674c4;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dashboard-calendar-search:hover { background: #125f9e; border-color: #125f9e; }
+@media (max-height: 600px) {
+  .dashboard-calendar-backdrop {
+    place-items: start center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .dashboard-calendar-panel {
+    min-height: 420px;
+    max-height: none;
+  }
+}
+.navbar {
+  background: white;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.stat-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
+}
+.stat-card:hover {
+  transform: translateY(-6px);
+}
+.stat-icon {
+  font-size: 2.2rem;
+  color: #b68c34;
+}
+.luxury-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+.status.confirmed {
+  background: rgba(15, 157, 88, 0.15);
+  color: #0f9d58;
+}
+.status.pending {
+  background: rgba(201, 161, 58, 0.2);
+  color: #b68c34;
+}
+.progress-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 25px auto 0;
+  background: conic-gradient(#c9a13a 72%, #eee 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1b1b1b;
+}

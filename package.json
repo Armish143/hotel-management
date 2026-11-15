@@ -1,0 +1,9 @@
+{
+  "name": "mughal-mahal",
+  "private": true,
+  "scripts": {
+    "dev": "node dev.mjs",
+    "dev:frontend": "npm --prefix Frontend run dev",
+    "dev:backend": "npm --prefix backend run dev"
+  }
+}

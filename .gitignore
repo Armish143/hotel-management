@@ -1,0 +1,29 @@
+# Dependencies and builds
+node_modules/
+dist/
+dist-ssr/
+bin/
+obj/
+.vs/
+
+# Secrets - never commit these
+.env
+.env.*
+!.env.example
+.vercel/
+
+# Runtime customer data (created automatically when the app runs)
+backend/data/bookingUsers.json
+backend/data/bookings.json
+backend/data/diningBookings.json
+backend/data/banquetBookings.json
+backend/data/conferences.json
+backend/uploads/profile/*
+!backend/uploads/profile/.gitkeep
+
+# Logs and editor files
+*.log
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
